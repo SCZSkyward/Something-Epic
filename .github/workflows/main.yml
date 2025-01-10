@@ -8,6 +8,7 @@ jobs:
    runs-on: windows-latest
    steps:
       - name: Build Example Mod
+        working-directory: ./Something-Epic/ExampleMod_C
         run: |
           cmake -B build
           cmake --build build --config release
