@@ -1,0 +1,24 @@
+name: Build GameAPI Mods
+on: 
+  workflow_dispatch:
+  branches:
+    - main
+jobs:
+  gameapi-mods-x64:
+   runs-on: windows-latest
+   steps:
+      - name: Build Example Mod
+        working-directory: ./ExampleMod_C
+        run: |
+          cmake -B build
+          cmake --build build --config release
+      - name: Move artifacts
+        run: |
+           mkdir artifacts
+           mv ./build/Release/*.dll ./artifacts
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+          with:
+            name: gameapi-mods-x64
+            path: artifacts
+        
