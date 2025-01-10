@@ -7,9 +7,11 @@ jobs:
   gameapi-mods-x64:
    runs-on: windows-latest
    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Build Example Mod
         run: |
-          cd ExampleMod_C
+          cd ./ExampleMod_C
           cmake -B build
           cmake --build build --config release
       - name: Move artifacts
