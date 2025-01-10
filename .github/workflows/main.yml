@@ -1,8 +1,8 @@
 name: Build GameAPI Mods
 on: 
   workflow_dispatch:
-  branches:
-    - main
+    branches:
+      - main
 jobs:
   gameapi-mods-x64:
    runs-on: windows-latest
