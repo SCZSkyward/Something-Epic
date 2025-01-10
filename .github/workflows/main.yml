@@ -9,7 +9,7 @@ jobs:
    steps:
       - name: Build Example Mod
         run: |
-          cd ExampleMod_C
+          cd ./Something-Epic/ExampleMod_C
           cmake -B build
           cmake --build build --config release
       - name: Move artifacts
